@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Test frontend</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="frontend-script.js" charset="utf-8"></script>
+</head>
+<body>
+    <main>
+        <h1>Test frontend</h1>
+
+        <section>
+            <div class="form-group">
+                What is your port?
+                <input type="text" id="inputPort" value="1337" />
+            </div>
+
+            <div class="form-group">
+            <p>What kind of request?</p>
+            <label> <input type="radio" name="requestType" value="GET"/> GET </label>
+            <label> <input type="radio" name="requestType" value="POST"/> POST </label>
+            <label> <input type="radio" name="requestType" value="PUT"/> PUT </label>
+            <label> <input type="radio" name="requestType" value="DELETE"/> DELETE </label>
+            </div>
+
+            <div class="form-group">
+                <p>URL?
+                <input type="text" id="inputUrl" value="/api/boat" />
+				</p>
+            </div>
+
+            <div class="form-group">
+                <p>Do you wish to have a querystring?</p>
+                ?&nbsp;<input type="text" id="querystring" value="id=5d62f825559322bc151c056b" style="width: 300px;" />
+            </div>
+
+            <div class="form-group">
+                <p>Do you wish to send any data? (use JSON format)</p>
+                <textarea id="requestBody" rows="8" cols="80">{
+    "name": "tophat",
+    "color": "gold",
+    "price": 2400
+}</textarea>
+
+
+            </div>
+
+            <p>
+                Will send request to this URL:
+                <strong><code id="destinationUrl"></code></strong>
+            </p>
+
+            <button id="buttonRequest">Make request</button>
+
+            <div class="form-group" id="resultDiv">
+                Result here
+            </div>
+        </section>
+    </main>
+</body>
+</html>
