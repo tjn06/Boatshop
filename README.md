@@ -1,6 +1,7 @@
 # Boatshop
 Boatshop
 För att demonstrera API funktionen i frontend
+---------------------------------------
 
 1. Starta Servern
 
@@ -23,13 +24,17 @@ Tryck ladda upp filer
 Skriv in http://localhost:1337/ i adressfältet för att gå till routen frontend.html
 Testa api-funktionerna i frontend!
 
+
 Viktiga Filer
+---------------------------------------
 - /public/frontend.html(scriptfil: frontend-script.js) : Vanilla JavaScript-app som demonstrerar API-funktioner
 - /public/frontend-test(scriptfil: frontend-script.js) : Dina testfiler(lite påverkade av css-klasser men ej ändras)
 - public/image-handeling.ejs : För bildhantering, frontend för att lägga upp alla bilder till databasen
 - restore-boatshop-script.js : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt)
 
+
 Jag har implementerat följande level ups:
+---------------------------------------
 1. Minst 20 dokument i databasen
 2. Node-skript som återställer databasen (tar bort allt och lägger in alla dokument igen)
 3. Vanilla JavaScript-app som demonstrerar API-funktioner
