@@ -1,5 +1,5 @@
 # Boatshop
-Guide Föförr att demonstrera API:t i frontend
+Guide för att demonstrera API:t i frontend
 ---------------------------------------
 
 **1. Starta Servern**
