@@ -3,20 +3,24 @@ Boatshop
 För att demonstrera API funktionen i frontend
 
 1. Starta Servern
+
 Öppna en terminal KÖR kommando: mongod , Öppna en terminal till KÖR kommando : npm run start-server
 
 2. Lägg upp båtobjekten
+
 Öppna en terminal i Rootmappen där nodescript-filerna ligger mata in kommando: 
 node restore-boatshop-script.js  - (Kör nodescriptet restore-boatshop-script.js för att rensa databsen och lägga upp alla båtobjekt)
 (för att bara lägga upp eller ta bort separat KÖR: add-boats-script.js eller delete-boats-script.js)
 
 3. Lägg in bilderna i databasen
+
 Skriv in http://localhost:1337/handleimages i adressfältet för att gå till routen bildhantering
 Tryck på browse för flera filer. Markera alla filer(bildfiler) i mappen public/assets
 Tryck ladda upp filer
 
 4. Demonstration av api:et i frontend
-Skriv in http://localhost:1337/ i adressfältet för att gå till routen bildhantering(frontend.html)
+
+Skriv in http://localhost:1337/ i adressfältet för att gå till routen frontend.html
 Testa api-funktionerna i frontend!
 
 Viktiga Filer
@@ -36,4 +40,4 @@ Kommentar: Har ej publicerad kod på level up 5. Då jag inte publicerat uppgift
 Netlify har jag valt att köra en frontend för att lätt ladda upp bilderna i databasen(se guide För att demonstrera API funktionen i frontend)
 så att bilderna hämtas ifrån databasen.
 
-7.Fler alternativ på sökning
+7. Fler alternativ på sökning
