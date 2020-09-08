@@ -15,9 +15,8 @@ window.addEventListener('load', () => {
     let sortFilter ='';
     update();
     
-    
-    console.log('Searchfilters outside: ', searchFilters.value)
-    console.log('Searchfilteroutside', searchFilter)
+    // console.log('Searchfilters outside: ', searchFilters.value)
+    // console.log('Searchfilteroutside', searchFilter)
 
     function update() {
         url = `http://localhost:1337/api/search/?${searchFilter}=${querystring.value}${sailFilter}${hasMotorFilter}&${sortFilter}`;
@@ -74,9 +73,8 @@ createBoat.addEventListener('click', async e => {
 
     let bodyAddReq = JSON.stringify({model : modelAdd.value, model_year : yearAdd.value, price : priceAdd.value, sail : sailAdd.value,
     motor : motorAdd.value, image : imageAdd.value })
-
-    console.log('URL on modbutton ', urlAddBoat);
-    console.log('Body  modbutton ', bodyAddReq);
+    // console.log('URL on modbutton ', urlAddBoat);
+    // console.log('Body  modbutton ', bodyAddReq);
     try {
         console.log('About to send a put request');
         const response = await fetch(urlAddBoat, {
@@ -133,9 +131,9 @@ async function show() {
     if( checkeSort == 0) {
         sortFilter =''; update();
         querystring.placeholder = 'Välj ett sökalternativ eller sök för alla båtar';}
+ 
+    // console.log(url)
 
-        
-    console.log(url)
     try {
         console.log('About to send GET request');
         const response = await fetch(url, { method: 'GET' });
@@ -314,7 +312,7 @@ async function show() {
 				
 			deleteButton.addEventListener('click', async e => {
                 let urlDeleteBook = `http://localhost:1337/api/boat?id=${deleteButton.value}`
-                console.log('uLDDD ', urlDeleteBook);
+                console.log('URL Delete ', urlDeleteBook);
                 try {
                 console.log('About to send a delete request');
 				const response = await fetch(urlDeleteBook, {
@@ -398,8 +396,8 @@ async function show() {
                     let bodyModReq = JSON.stringify({model : modelMod.innerHTML, price : priceMod.innerHTML, model_year : yearMod.innerHTML,
                     motor : motorMod.innerHTML, sail : sailMod.innerHTML, image : imgMod.innerHTML})
 
-                    console.log('URL on modbutton ', urlmodifyButton);
-                    console.log('Body  modbutton ', bodyModReq);
+                    // console.log('URL on modbutton ', urlmodifyButton);
+                    // console.log('Body  modbutton ', bodyModReq);
                     try {
                     console.log('About to send a put request');
 
