@@ -1,31 +1,24 @@
-id - skapas av databasen!
-modellnamn - sträng med upp till 64 tecken
-tillverkningsår - heltal
-pris - flyttal (tal med decimaler)
-segelbåt - kan vara ja/nej
-motor - kan vara ja/nej
-bild URL - level u
 
 
-({model: 'Sea Ray 255', model_year: 2011, price: 545000, sail: 'no', motor: 'yes', image: '/api/assets'})
-
-
-({model: 'XO Cruise', model_year: 2017, price: 1995000, sail: 'no', motor: 'yes', image: '/api/assets'})
-({model: 'TG 650 Evinrude', model_year: 2013, price: 299000, sail: 'no', motor: 'yes', image: '/api/assets'})
-({model: 'Cresent 535 HT Classic', model_year: 2017, price: 790000, sail: 'no', motor: 'yes', image: '/api/assets'})
-({model: 'Yamarin 59 DC', model_year: 2007, price: 239000, sail: 'no', motor: 'yes', image: '/api/assets'})
-({model: 'Quicksilver 705 Mercury', model_year: 2012, price: 395000, sail: 'no', motor: 'yes', image: '/api/assets'})
-
-({model: 'Delphia 33', model_year: 2010, price: 795000, sail: 'yes', motor: 'yes', image: '/api/assets'})
-({model: 'Vindö Mixer', model_year: 2010, price: 925000, sail: 'yes', motor: 'no', image: '/api/assets'})
-({model: 'Helmsman', model_year: 1989, price: 99000, sail: 'yes', motor: 'no', image: '/api/assets'})
-({model: 'Hallberg-Rassy 31', model_year: 2009, price: 995000, sail: 'yes', motor: 'yes', image: '/api/assets'})
-({model: 'Baccant 36', model_year: 1968, price: 395000, sail: 'yes', motor: 'yes', image: '/api/assets'})
-
-
-
-
-
-db.boats.replaceOne({"replace": 'repl'},{ model: 'Sea Ray 255', model_year: 2011, price: 545000, sail: 'no', motor: 'yes', image: '/api/assets'})
-
-db.boats.find({ $text: { $search: "X"}})
+({model: 'XO Cruise', model_year: 2017, price: 1995000, sail: 'no', motor: 'yes', image: 'Xocruise.jpg'})
+({model: 'TG 650 Evinrude', model_year: 2013, price: 299000, sail: 'no', motor: 'yes', image: 'Tg6500evinrude.jpg'})
+({model: 'Cresent 535 HT Classic', model_year: 2017, price: 790000, sail: 'no', motor: 'yes', image: 'Cresent535.jpg'})
+({model: 'Yamarin 59 DC', model_year: 2007, price: 239000, sail: 'no', motor: 'yes', image: 'Yamarin59dc.jpg'})
+({model: 'Quicksilver 705 Mercury', model_year: 2012, price: 395000, sail: 'no', motor: 'yes', image: 'Quicksilver705.jpg'})
+({model: 'Delphia 33', model_year: 2010, price: 795000, sail: 'yes', motor: 'yes', image: 'Delphia33.jpg'})
+({model: 'Vindö Mixer', model_year: 2010, price: 925000, sail: 'yes', motor: 'no', image: 'Vindomixer.jpg'})
+({model: 'Helmsman', model_year: 1989, price: 99000, sail: 'yes', motor: 'no', image: 'Helsman31.jpg'})
+({model: 'Hallberg-Rassy 31', model_year: 2009, price: 995000, sail: 'yes', motor: 'yes', image: 'Hallbergrassy.jpg'})
+({model: 'Baccant 36', model_year: 1968, price: 395000, sail: 'yes', motor: 'yes', image: ''})
+({model: 'Sea Ray 255', model_year: '2011' , price: 545000, sail: 'no', motor: 'yes', image: 'SeaRay255.jpg'})
+({model: 'Nimbus T8', model_year: '2021' , price: 1496000, sail: 'no', motor: 'yes', image: 'Nimbust8.jpg'})
+({model: 'Storebro 410 Commander', model_year: '2005' , price: 2675000, sail: 'no', motor: 'yes', image: 'Storebro410.jpg'})
+({model: 'Jeanneau 895', model_year: '2020' , price: 1495000, sail: 'no', motor: 'yes', image: 'Jeanneau895.jpg'})
+({model: 'HR 470', model_year: '2009' , price: 18000, sail: 'no', motor: 'no', image: 'Hr470.jpg'})
+({model: 'Linder 440', model_year: '2020' , price: 30500, sail: 'no', motor: 'no', image: 'Linder440.jpg'})
+({model: 'Cresent 444 Rodd', model_year: '2018' , price: 22300, sail: 'no', motor: 'no', image: 'Cresent444.jpg'})
+({model: 'Linder INKAS 495', model_year: '2015' , price: 18400, sail: 'no', motor: 'no', image: 'Linderinkas.jpg'})
+({model: 'Johnson 26', model_year: '1978' , price: 61000, sail: 'yes', motor: 'no', image: 'Johnson26.jpg'})
+({model: 'Omega 30S', model_year: '1984' , price: 60000, sail: 'yes', motor: 'yes', image: 'Omega30s.jpg'})
+({model: 'Maxi 95', model_year: '1976' , price: 260000, sail: 'yes', motor: 'yes', image: 'Maxi95.jpg'})
+({model: 'Regina af Vindö 34', model_year: '2005' , price: 3200000, sail: 'yes', motor: 'yes', image: 'Maxi95.jpg'})

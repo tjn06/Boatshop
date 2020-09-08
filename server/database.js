@@ -1,8 +1,49 @@
 const { MongoClient, ObjectID } = require('mongodb')
+const fs = require("fs");
+
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'boatshop';
 const collectionName = 'boats';
+
+
+//addAllBoats Hämtar alla båtar ifrån databasen, obs återställer ej. Används ej i Frontend Demonstrationsfilerna
+function addAllBoats(callback) {
+	MongoClient.connect(
+		url,
+		{ useUnifiedTopology: true },
+		async (error, client) => {
+			if (error) {
+				console.log("An error occured. Could not connect." + error);
+			return;
+		}
+		const col = client.db(dbName).collection(collectionName);
+		let boats;
+		let data = "";
+		const fsReader = fs.createReadStream("./restoreboats.json");
+		fsReader.on("data", (chunk) => {
+			data += chunk;
+		});
+		fsReader.on("end", () => {
+			boats = JSON.parse(data);
+			try {
+				boats.forEach((boat, i) => {
+					col.insertOne(boat, (res) => {
+						if (i === boats.length - 1) {
+							client.close();
+						}
+					});
+				});
+			} catch (err) {
+				console.log(err);
+				client.close();
+			} finally {
+				callback(boats)}
+		});
+		}
+	);
+	}
+
 
 
 function getAllBoats(callback) {
@@ -10,11 +51,13 @@ function getAllBoats(callback) {
 }
 
 
+
 function getBoat(id, callback) {
 	get({ _id: new ObjectID(id) }, array => callback( array[0] ))
 }
 
-// /a/i
+
+
 async function search(query, callback) {
 	let sortFilter ="";
 	const filter = {};
@@ -26,11 +69,11 @@ async function search(query, callback) {
 	} if (query.is_sail) {
 		filter.sail = (query.is_sail);
 	} if (query.has_motor) {
-		filter.motor = (query.is_sail);
+		filter.motor = (query.has_motor);
 	} if (query.madebefore) {
 		filter.model_year = {$lt : Number(query.madebefore) };
 	} if (query.madeafter) {
-		filter.model_year = {$gt : Number(query.madebefore) };
+		filter.model_year = {$gt : Number(query.madeafter) };
 	}  if (query.order) {
 		sortFilter = await sort(query.order)
 	}
@@ -44,10 +87,10 @@ function sort(order) {
 			sortFilter = {price : 1};
 			break;
 		case "name_asc":
-			sortFilter = {model : 1};
+			sortFilter = {model : -1};
 			break;
 		case "name_desc":
-			sortFilter = {model : -1};
+			sortFilter = {model : 1};
 			break;
 		case "oldest":
 			sortFilter = {model_year : 1};
@@ -56,11 +99,12 @@ function sort(order) {
 			sortFilter = {model_year : -1};
 			break;	
 		default:
-		sortFilter = {model : 1};
+			sortFilter = {model : 1};
 	}
 
 	return sortFilter;
 }
+
 
 
 function get(filter, callback, sortFilter) {
@@ -70,9 +114,9 @@ function get(filter, callback, sortFilter) {
 		async (error, client) => {
 			if( error ) {
 				callback('"ERROR!! Could not connect"');
-				return;  // exit the callback function
+				return;
 			}
-			console.log(sortFilter)
+			
 			const col = client.db(dbName).collection(collectionName);
 			try {
 				const cursor = await col.find(filter).sort(sortFilter);
@@ -87,31 +131,21 @@ function get(filter, callback, sortFilter) {
 				client.close();
 			}
 
-
-			// .toArray((error, docs) => {
-			// 	// console.log('find filter=', filter, error, docs);
-			// 	if( error ) {
-			// 		callback('"ERROR!! Query error"');
-			// 	} else {
-			// 		callback(docs);
-			// 	}
-			// 	client.close();
-			// })// toArray - async
-		}// connect callback - async
-	)//connect - async
+		}
+	)
 }
 
+
+
 function editBoatList(requestBody, callback, method) {
-	console.log('addHat', requestBody);
 	const doc = requestBody
-	// const docBody = bodyReq
 	MongoClient.connect(
 		url,
 		{ useUnifiedTopology: true },
 		async (error, client) => {
 			if( error ) {
 				callback('"ERROR!! Could not connect"');
-				return;  // exit the callback function
+				return; 
 			}
 			const col = client.db(dbName).collection(collectionName);
 			try {
@@ -125,19 +159,21 @@ function editBoatList(requestBody, callback, method) {
 				
 
 			} catch(error) {
-				console.error('addHat error: ' + error.message);
+				console.error('error: ' + error.message);
 				callback('"ERROR!! Query error"');
 
 			} finally {
 				client.close();
 			}
-		}// connect callback - async
-	)//connect - async
+		}
+	)
 }
 
 
+
 async function deleteBoat (col, doc, callback) {
-	const result = await col.deleteOne({_id: new ObjectID(doc)});
+	// const result = await col.deleteOne({_id: new ObjectID(doc)});
+	const result = await col.deleteOne({});
 	callback({
 		result: result.result,
 		ops: result.ops
@@ -161,47 +197,7 @@ async function updateBoat (col, doc, callback) {
 	})
 }
 
-// function deleteBoat(filter, callback) {
-// 	// console.log('addHat', requestBody);
-// 	const doc = filter
-// 	MongoClient.connect(
-// 		url,
-// 		{ useUnifiedTopology: true },
-// 		async (error, client) => {
-// 			if( error ) {
-// 				callback('"ERROR!! Could not connect"');
-// 				return;  // exit the callback function
-// 			}
-// 			const col = client.db(dbName).collection(collectionName);
-// 			try {
-// 				// Wait for the resut of the query
-// 				// If it fails, it will throw an error
-// 				const result = await col.deleteOne({_id: new ObjectID(doc)});
-// 				callback({
-// 					result: result.result,
-// 					ops: result.ops
-// 				})
-
-// 			} catch(error) {
-// 				console.error('addHat error: ' + error.message);
-// 				callback('"DELERROR!! Query error"');
-
-// 			} finally {
-// 				client.close();
-// 			}
-// 		}// connect callback - async
-// 	)//connect - async
-// }
-// async function updateBoat (col, doc, callback, docBody) {
-// 	console.log(docBody)
-// 	const result = await col.updateOne({_id: new ObjectID(doc)}, {$set: {docBody}});
-// 	callback({
-// 		result: result.result,
-// 		ops: result.ops
-// 	})
-// }
-
 
 module.exports = {
-	getAllBoats, getBoat, editBoatList, search
+	getAllBoats, getBoat, editBoatList, search, addAllBoats
 }

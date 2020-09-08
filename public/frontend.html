@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Test frontend</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="frontend-script.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <div id="maindiv"></div>
+  <div class="inputTopDiv">
+    
+    <img src="boat-logo.svg" alt="boat-logo" class="logo-space">
+    
+<div class="formsDiv">
+    <div class="border-search">
+
+		<div class="search-area">
+			<input id="searchInput" type="text" size="40" placeholder="Välj ett sökalternativ eller sök för alla båtar" value=""/>
+			<button id="showCards">Sök / Hämta båtar</button>
+    </div>
+
+    <div class="search-space">
+        <span>Sök efter: </span>
+        <label class="container">Modell
+            <input value="word" type="checkbox" name="active" onclick="onlyOne(this)" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Maxpris
+            <input value="maxprice" type="checkbox" name="active" onclick="onlyOne(this)" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Tillverkade innan
+            <input value="madebefore" type="checkbox" name="active" onclick="onlyOne(this)" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Tillverkade efter
+            <input value="madeafter" type="checkbox" name="active" onclick="onlyOne(this)" />
+            <span class="checkmark"></span>
+          </label>
+    </div>
+
+    <div class="search-space">
+        <span>Typ: </span>
+        <label class="container">Segelbåt
+          <input value="&is_sail=yes" type="checkbox" name="sail" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Har Motor
+          <input value="&has_motor=yes" type="checkbox" name="hasmotor" />
+            <span class="checkmark"></span>
+          </label>
+    </div>
+
+    <div class="search-space">
+        <span>Sortera efter: </span>
+        <label class="container">Lägsta pris
+          <input value="order=lowprice" type="checkbox" name="active-sort" onclick="onlyOneSort(this)" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Modell-namn fallande
+          <input value="order=name_asc" type="checkbox" name="active-sort" onclick="onlyOneSort(this)" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Modell-namn stigande
+          <input value="order=name_desc" type="checkbox" name="active-sort" onclick="onlyOneSort(this)" />
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Äldsta
+          <input value="order=oldest" type="checkbox" name="active-sort" onclick="onlyOneSort(this)" />
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Nyaste
+          <input value="order=newest" type="checkbox" name="active-sort" onclick="onlyOneSort(this)" />
+          <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+
+    <div class="add-boat-container">
+      <input type="text" id="modelInput" value="" placeholder="Modellnamn" size="15" />
+      <input type="text" id="priceInput" value="" placeholder="Pris" size="15" />
+      <input type="text" id="yearInput" value="" placeholder="Tillverkningsår" size="15" />
+      <input type="text" id="sailInput" value="" placeholder="Segelbåt yes/no" size="15" />
+      <input type="text" id="motorInput" value="" placeholder="Motor yes/no" size="15" />
+      <input type="text" id="imageInput" name="img-field" value="" placeholder="Vänta på filnamn" size="15" disabled/>
+      <button id="createBoatButton">Lägg till</button>
+
+      <div class="form-place">
+        <form action="/api/frontendupload" method="post" enctype="multipart/form-data">
+          <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
+          <label class="custom-file-label" for="file1" id="file-label">Ladda upp bildfilen innan du lägger till båten</label>
+          <input type="submit" value="Ladda upp bild" class="btn btn-primary btn-block">
+          </form>
+      </div>
+    </div>
+
+</div>
+</div>
+
+  <main>
+    <div class="border">
+      <div class="boatCards"></div>
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>
