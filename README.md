@@ -5,7 +5,7 @@ För att demonstrera API funktionen i frontend
 
 1. Starta Servern
 
-Öppna en terminal KÖR kommando: mongod , Öppna en terminal till KÖR kommando : npm run start-server
+Öppna en terminal KÖR kommando: **mongod** , Öppna en terminal till KÖR kommando : **npm run start-server**
 
 2. Lägg upp båtobjekten
 
@@ -27,10 +27,10 @@ Testa api-funktionerna i frontend!
 
 Viktiga Filer
 ---------------------------------------
-- /public/frontend.html(scriptfil: frontend-script.js) : Vanilla JavaScript-app som demonstrerar API-funktioner
-- /public/frontend-test(scriptfil: frontend-script.js) : Dina testfiler(lite påverkade av css-klasser men ej ändras)
-- public/image-handeling.ejs : För bildhantering, frontend för att lägga upp alla bilder till databasen
-- restore-boatshop-script.js : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt)
+- /public/**frontend.html**(scriptfil: **frontend-script.js**) : Vanilla JavaScript-app som demonstrerar API-funktioner
+- /public/**frontend-test**(scriptfil: **frontend-script.js**) : Dina testfiler(lite påverkade av css-klasser men ej ändras)
+- public/**image-handeling.ejs** : För bildhantering, frontend för att lägga upp alla bilder till databasen
+- **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt)
 
 
 Jag har implementerat följande level ups:
