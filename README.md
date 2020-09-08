@@ -5,7 +5,7 @@ För att demonstrera API funktionen i frontend
 1. Starta Servern
 Öppna en terminal KÖR kommando: mongod , Öppna en terminal till KÖR kommando : npm run start-server
 
-2.Lägg upp båtobjekten
+2. Lägg upp båtobjekten
 Öppna en terminal i Rootmappen där nodescript-filerna ligger mata in kommando: 
 node restore-boatshop-script.js  - (Kör nodescriptet restore-boatshop-script.js för att rensa databsen och lägga upp alla båtobjekt)
 (för att bara lägga upp eller ta bort separat KÖR: add-boats-script.js eller delete-boats-script.js)
@@ -31,7 +31,7 @@ Jag har implementerat följande level ups:
 3. Vanilla JavaScript-app som demonstrerar API-funktioner
 4. Ändra ett båt-dokument i databasen med ett PUT request
 
-(5. Varje båtobjekt i databasen har en URL till en bild. 6. Bilderna finns i databasen)
+5. Varje båtobjekt i databasen har en URL till en bild. 6. Bilderna finns i databasen)
 Kommentar: Har ej publicerad kod på level up 5. Då jag inte publicerat uppgiften med hjäp av
 Netlify har jag valt att köra en frontend för att lätt ladda upp bilderna i databasen(se guide För att demonstrera API funktionen i frontend)
 så att bilderna hämtas ifrån databasen.
