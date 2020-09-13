@@ -9,12 +9,12 @@ Guide för att demonstrera API:t i frontend
 **2. Lägg upp båtobjekten**
 
 Öppna en terminal i Rootmappen där nodescript-filerna ligger mata in kommando: 
-**node restore-boatshop-script.js**  - Kör nodescripte för att rensa databsen och lägga upp alla båtobjekt.
+**node restore-boatshop-script.js**  - Kör nodescriptet för att rensa databsen och lägga upp alla båtobjekt.
 (för att bara lägga upp eller ta bort separat KÖR: **add-boats-script.js** eller **delete-boats-script.js**).
 
 **3. Lägg in bilderna i databasen**
 
-Skriv in http://localhost:1337/handleimages i adressfältet för att gå till routen bildhantering
+Skriv in http://localhost:1337/handleimages i adressfältet i webläsaren för att gå till routen bildhantering.
 Tryck på browse för flera filer. Markera alla filer(bildfiler) i mappen **public/assets**
 Tryck ladda upp filer.
 
