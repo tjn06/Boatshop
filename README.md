@@ -27,7 +27,7 @@ Testa api-funktionerna i frontend!
 Viktiga Filer
 ---------------------------------------
 - /public/**frontend.html**(scriptfil: **frontend-script.js**) : Vanilla JavaScript-app som demonstrerar API-funktioner.
-- /public/**frontend-test**(scriptfil: **frontend-script.js**) : Dina testfiler(lite påverkade av css-klasser men ej ändras).
+- /public/**frontend-test**(scriptfil: **frontend-script-test.js**) : Dina(Davids) testfiler(lite påverkade av css-klasser men ej ändrad).
 - public/**image-handeling.ejs** : För bildhantering, frontend för att lägga upp alla bilder till databasen.
 - **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt).
 
