@@ -4,12 +4,12 @@ Guide för att demonstrera API:t i frontend
 
 **1. Starta Servern**
 
-Öppna en terminal KÖR kommando: **mongod** , Öppna en terminal till KÖR kommando : **npm run start-server**
+Öppna en terminal KÖR kommando: **mongod** .Öppna en terminal till KÖR kommando : **npm run start-server**
 
 **2. Lägg upp båtobjekten**
 
-Öppna en terminal i Rootmappen där nodescript-filerna ligger mata in kommando: 
-**node restore-boatshop-script.js**  - Kör nodescriptet för att rensa databsen och lägga upp alla båtobjekt.
+Öppna en terminal(git bash) i rootmappen där nodescript-filerna ligger mata in kommando: 
+**node restore-boatshop-script.js**  - Kör nodescriptet för att rensa databasen och lägga upp alla båtobjekt.
 (för att bara lägga upp eller ta bort separat KÖR: **add-boats-script.js** eller **delete-boats-script.js**).
 
 **3. Lägg in bilderna i databasen**
@@ -27,7 +27,7 @@ Testa api-funktionerna i frontend!
 Viktiga Filer
 ---------------------------------------
 - /public/**frontend.html**(scriptfil: **frontend-script.js**) : Vanilla JavaScript-app som demonstrerar API-funktioner.
-- /public/**frontend-test**(scriptfil: **frontend-script-test.js**) : Dina(Davids) testfiler(lite påverkade av css-klasser men ej ändrad).
+- /public/**frontend-test**(scriptfil: **frontend-script-test.js**) : Testfiler-frontend(test av requests).
 - public/**image-handeling.ejs** : För bildhantering, frontend för att lägga upp alla bilder till databasen.
 - **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt).
 
