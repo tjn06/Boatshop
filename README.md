@@ -1,26 +1,26 @@
 # Boatshop
-Guide för att demonstrera API:t i frontend
+Guide för att demonstrera api:t i frontend
 ---------------------------------------
 
 **1. Starta Servern**
 
-Öppna en terminal KÖR kommando: **mongod** .Öppna en terminal till KÖR kommando : **npm run start-server**
+Öppna en terminal KÖR kommando: **mongod** för att få tillgång till databasen. Öppna en terminal till KÖR kommando : **npm run start-server**
 
 **2. Lägg upp båtobjekten**
 
-Öppna en terminal(git bash) i rootmappen där nodescript-filerna ligger mata in kommando: 
+Öppna en terminal i rootmappen där nodescript-filerna ligger mata in kommando: 
 **node restore-boatshop-script.js**  - Kör nodescriptet för att rensa databasen och lägga upp alla båtobjekt.
-(för att bara lägga upp eller ta bort separat KÖR: **add-boats-script.js** eller **delete-boats-script.js**).
+(För att bara lägga upp eller ta bort separat KÖR: **add-boats-script.js** eller **delete-boats-script.js**).
 
 **3. Lägg in bilderna i databasen**
 
-Skriv in http://localhost:1337/handleimages i adressfältet i webläsaren för att gå till routen bildhantering.
-Tryck på browse för flera filer. Markera alla filer(bildfiler) i mappen **public/assets**
-Tryck ladda upp filer.
+Skriv in http://localhost:1337/handleimages i adressfältet i webbläsaren för att gå till routen bildhantering.
+Klicka på browse-knappen för flera filer. Markera alla filer(bildfiler) i mappen **public/assets**
+Klicka på ladda upp filer.
 
-**4. Demonstration av api:et i frontend**
+**4. Demonstration av api:t i frontend**
 
-Skriv in http://localhost:1337/ i adressfältet för att gå till routen **frontend.html**.
+Skriv in http://localhost:1337/ i adressfältet i webbläsaren för att gå till routen **frontend.html**.
 Testa api-funktionerna i frontend!
 
 
@@ -29,7 +29,7 @@ Viktiga Filer
 - /public/**frontend.html**(scriptfil: **frontend-script.js**) : Vanilla JavaScript-app som demonstrerar API-funktioner.
 - /public/**frontend-test**(scriptfil: **frontend-script-test.js**) : Testfiler-frontend(test av requests).
 - public/**image-handeling.ejs** : För bildhantering, frontend för att lägga upp alla bilder till databasen.
-- **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databsen och lägger in båtobjekten på nytt).
+- **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databasen och lägger in båtobjekten på nytt).
 
 
 Jag har implementerat följande level ups:
