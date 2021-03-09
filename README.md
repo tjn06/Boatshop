@@ -4,7 +4,7 @@ Guide för att demonstrera api:t i frontend
 
 **1. Starta Servern**
 
-Öppna en terminal KÖR kommando: **mongod** för att få tillgång till databasen. Öppna en terminal till KÖR kommando : **npm run start-server**
+Öppna en terminal i rootmappen KÖR kommando: **mongod** för att få tillgång till databasen. Öppna en terminal till i rootmappen KÖR kommando : **npm run start-server**
 
 **2. Lägg upp båtobjekten**
 
