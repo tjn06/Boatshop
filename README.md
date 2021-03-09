@@ -10,7 +10,7 @@ Guide för att demonstrera api:t i frontend
 
 Öppna en terminal i rootmappen där nodescript-filerna ligger mata in kommando: 
 **node restore-boatshop-script.js**  - Kör nodescriptet för att rensa databasen och lägga upp alla båtobjekt.
-(För att bara lägga upp eller ta bort separat KÖR: **add-boats-script.js** eller **delete-boats-script.js**).
+(För att bara lägga upp eller ta bort separat KÖR **add-boats-script.js** eller **delete-boats-script.js**).
 
 **3. Lägg in bilderna i databasen**
 
