@@ -29,7 +29,7 @@ Viktiga Filer
 - /public/**frontend.html**(scriptfil: **frontend-script.js**) : Vanilla JavaScript-app som demonstrerar API-funktioner.
 - /public/**frontend-test**(scriptfil: **frontend-script-test.js**) : Testfiler-frontend(test av requests).
 - public/**image-handeling.ejs** : För bildhantering, frontend för att lägga upp alla bilder till databasen.
-- **restore-boatshop-script.js** : Kör för att lägga in alla båtaobjekt (rensar databasen och lägger in båtobjekten på nytt).
+- **restore-boatshop-script.js** : KÖR för att lägga in alla båtaobjekt (rensar databasen och lägger in båtobjekten på nytt).
 
 
 Jag har implementerat följande level ups:
